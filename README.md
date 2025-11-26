@@ -1,74 +1,65 @@
-# <h1 align="center">_SD_ANALYTICS_</h1>
+# 🚀 SD_ANALYTICS
+
 <p align="center">
-  <img src="images/SD_analytics.png"  height="400">
-<p align="center">
+  <img src="images/SD_analytics.png" height="400">
+</p>
 
-## Descripción Proyectos
+---
 
-🚀 Funcionamiento y Arquitectura
-La aplicación combina cuatro tecnologías clave, cada una cumpliendo un rol bien definido, siguiendo el modelo tradicional de desarrollo web:
+## 🏗️ Descripción del Proyecto: Calculadora Streamlit/Web
 
-1. Estructura (HTML) 🏗️
-El HTML proporciona el esqueleto y la disposición de la interfaz de la calculadora.
+Este proyecto demuestra la incrustación de una aplicación web frontend tradicional (HTML, CSS, JavaScript) dentro de un framework de aplicación de datos de Python (Streamlit). La aplicación funciona como una calculadora simple.
 
-Contenedor principal: Un div que agrupa y centra los elementos.
+### ⚙️ Funcionamiento y Arquitectura
 
-Entradas de usuario: Dos campos de texto (<input type="number">) para los operandos (firstNumber y secondNumber).
+La aplicación sigue el modelo de desarrollo web tradicional, combinando cuatro tecnologías clave:
 
-Selector de Operación: Un menú desplegable (<select id="operator">) para elegir la operación aritmética (**, -, *, /).
+### 1. Estructura (HTML) 🏗️
 
-Interacción: Un botón (<button id="calculate">) que inicia el proceso de cálculo.
+Proporciona el esqueleto de la calculadora:
+* **Contenedor principal:** Un `div` para agrupar y centrar los elementos.
+* **Entradas de usuario:** Dos campos de texto (`<input type="number">`) para los operandos (**firstNumber** y **secondNumber**).
+* **Selector de Operación:** Un menú desplegable (`<select id="operator">`) para elegir la operación (**+, -, *, /**).
+* **Interacción:** Un botón (`<button id="calculate">`) que inicia el proceso.
+* **Salida:** Un párrafo (`<p id="result">`) para mostrar el resultado o mensajes de error.
 
-Salida: Un párrafo (<p id="result">) reservado para mostrar el resultado final o mensajes al usuario.
+### 2. Estilo (CSS) ✨
 
-2. Estilo (CSS) ✨
-El CSS se aplica directamente dentro del HTML para asegurar que la calculadora tenga una presentación visual limpia y responsive, independientemente del entorno de Streamlit.
+El CSS se aplica para una presentación visual **limpia** y **responsive** dentro del entorno Streamlit:
+* **Diseño:** Centrado, bordes redondeados y una sombra sutil.
+* **Consistencia:** Estilo uniforme aplicado a entradas, selector y botón.
+* **Énfasis:** El botón "Calculate" se destaca con un color de fondo verde (`#4CAF50`).
 
-Diseño: Centrado, bordes redondeados y una sombra sutil para simular una caja física.
+### 3. Lógica (JavaScript) 🧠
 
-Consistencia: Aplica un estilo uniforme a las entradas, el selector y el botón.
+El motor funcional que maneja la interacción y realiza los cálculos:
+* **Captura de DOM:** Localiza los elementos HTML por su `ID`.
+* **Función `calculate()`:** Se ejecuta al hacer clic, convierte entradas a números (`parseFloat`), **valida** las entradas (`isNaN`), y usa una sentencia `switch` para aplicar la operación.
+* **Manejo de Excepciones:** Incluye lógica para la **división por cero**.
+* **Manejador de Eventos:** El método `addEventListener('click', calculate)` enlaza el clic del botón a la ejecución de la función.
 
-Énfasis: Destaca el botón "Calculate" con un color de fondo verde (#4CAF50).
+### 4. Presentación (Streamlit / Python) 🐍
 
-3. Lógica (JavaScript) 🧠
-El JavaScript es el motor funcional que realiza los cálculos y maneja la interacción del usuario.
+Streamlit actúa como el *host*, permitiendo la ejecución del código web independiente:
+* **Incrustación:** El código HTML, CSS y JavaScript se almacena como una única cadena de texto en una variable de Python (`html_code`).
+* **Renderizado:** La función clave es `components.html(html_code, height=450)`, que renderiza el contenido dentro de un **iframe seguro**, haciendo que la calculadora sea completamente interactiva y funcional dentro de la aplicación Streamlit.
 
-Captura de DOM: El script primero localiza los elementos HTML por su ID.
+---
 
-Función calculate(): Se ejecuta al hacer clic en el botón.
+## 🛠️ Stack de Tecnologías y Herramientas
 
-Convierte los valores de entrada a números (parseFloat).
+| Tecnología | Rol en el Proyecto |
+| :--- | :--- |
+| **Streamlit** | Framework principal de Python para alojar la aplicación web. |
+| **HTML5** | Estructura los elementos de la calculadora. |
+| **CSS3** | Define el aspecto visual y el diseño. |
+| **JavaScript** | Implementa la lógica de cálculo y la interactividad. |
+| **Python** | Contiene el script que utiliza Streamlit para incrustar el componente. |
 
-Valida las entradas para evitar errores (isNaN).
+---
 
-Utiliza una sentencia switch para aplicar la operación correcta.
+## 🧑‍💻 Colaboradores
 
-Incluye manejo de excepciones para la división por cero.
-
-Actualiza dinámicamente el contenido del elemento result.
-
-Manejador de Eventos: El método addEventListener('click', calculate) es crucial, ya que enlaza el evento de clic del botón directamente a la ejecución de la función de cálculo.
-
-4. Presentación (Streamlit / Python) 🐍
-Streamlit actúa como el host de la aplicación, permitiendo que un código web independiente se ejecute dentro de un marco de aplicación de Python.
-
-Incrustación: El código HTML, CSS y JavaScript se guarda como una única cadena de texto en una variable de Python (html_code).
-
-Renderizado: La función clave es components.html(html_code, height=450). Esta función le indica a Streamlit que renderice el contenido de la cadena dentro de un iframe seguro, haciendo que la calculadora sea completamente interactiva y funcional dentro de la aplicación de Streamlit.
-
-## 🛠️ Stack de tecnologías y herramientas
-
-Tecnología,Rol en el Proyecto
-Streamlit,Framework principal de Python para alojar la aplicación web.
-HTML5,Estructura los elementos de la calculadora.
-CSS3,Define el aspecto visual y el diseño.
-JavaScript,Implementa la lógica de cálculo y la interactividad.
-Python,Contiene el script que utiliza Streamlit para incrustar el componente.
-
-## Colaboradores
-
-|                         | Nombre   |   Rol                    | GitHub & LinkedIn                                                                                                                                                                                          |
-| ----------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img width="60" height="60" src="https://github.com/Sergius-DS.png" alt="Sergius-DS" /> | Sergio Rivera Bustamante | Data Scientist | [![Github](https://skillicons.dev/icons?i=github)](https://github.com/Sergius-DS) [![Linkedin](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/sergio-rivera-bustamante-6642b836/)                         |
-|                               |
-
+| Avatar | Nombre | Rol | GitHub & LinkedIn |
+| :--- | :--- | :--- | :--- |
+| <img width="60" height="60" src="https://github.com/Sergius-DS.png" alt="Sergius-DS" /> | **Sergio Rivera Bustamante** | Data Scientist | [![Github](https://skillicons.dev/icons?i=github)](https://github.com/Sergius-DS) [![Linkedin](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/sergio-rivera-bustamante-6642b836/) |
