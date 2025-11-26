@@ -1,7 +1,8 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# Incrusta tu HTML, CSS y JS en un solo string de Python
+# Se incrustó el HTML, CSS y JS en un solo string de Python
+# Esto se hizo para que se pudiera ejecutar en streamlit
 html_code = f"""
 <!DOCTYPE html>
 <html lang="en">
