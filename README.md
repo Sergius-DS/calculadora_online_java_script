@@ -3,16 +3,6 @@
   <img src="images/SD_analytics.png"  height="400">
 <p align="center">
 
-## Índice
-
-1. [Descripción](#Descripción-Proyectos)
-2. [Regresión Lineal con Red Neuronal](#Regresión-Lineal-con-Red-Neuronal)
-3. [Predicción Multiclase](#Predicción-Multiclase)
-4. [Análisis de Tenis](#Análisis-de-Tenis)
-5. [Demo Modelos en Acción](#Demo-Modelos-en-Acción)
-6. [Stack de tecnologías y herramientas](#Stack-de-tecnologías-y-herramientas)
-7. [Colaboradores](#Colaboradores)
-
 ## Descripción Proyectos
 
 🚀 Funcionamiento y Arquitectura
