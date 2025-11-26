@@ -10,7 +10,7 @@ html_code = f"""
     <meta charset="UTF-8" />
     <title>Calculator</title>
     <style>
-        /* Tu styles.css */
+        /* Archivo styles.css */
         .container {{
             padding: 20px;
             max-width: 400px;
@@ -53,7 +53,7 @@ html_code = f"""
         <p id="result">Result will be displayed here</p>
     </div>
     <script>
-        /* Tu script.js */
+        /* Archivo script.js */
         const firstNumberInput = document.getElementById('firstNumber');
         const secondNumberInput = document.getElementById('secondNumber');
         const operatorSelectInput = document.getElementById('operator');
