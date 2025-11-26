@@ -1,23 +1,9 @@
-# <h1 align="center">_SD_ANALYTICS_</h1>
-<p align="center">
-  <img src="images/SD_analytics.png"  height="400">
-<p align="center">
-
-## Índice
-
-1. [Descripción](#Descripción-Proyectos)
-2. [Regresión Lineal con Red Neuronal](#Regresión-Lineal-con-Red-Neuronal)
-3. [Predicción Multiclase](#Predicción-Multiclase)
-4. [Análisis de Tenis](#Análisis-de-Tenis)
-5. [Demo Modelos en Acción](#Demo-Modelos-en-Acción)
-6. [Stack de tecnologías y herramientas](#Stack-de-tecnologías-y-herramientas)
-7. [Colaboradores](#Colaboradores)
 
 ## Descripción Proyectos
 
-sta es una aplicación web sencilla y funcional cuyo único propósito es realizar operaciones aritméticas básicas (suma, resta, multiplicación y división) utilizando JavaScript para la lógica, y luego ser presentada al usuario a través del framework Streamlit.
+Esta es una aplicación web sencilla y funcional cuyo único propósito es realizar operaciones aritméticas básicas (suma, resta, multiplicación y división) utilizando JavaScript para la lógica, y luego ser presentada al usuario a través del framework Streamlit.
 
-##1. Estructura (HTML)
+## 1. Estructura (HTML)
 El código HTML define el esqueleto de la calculadora, que incluye:
 
 Un contenedor principal (<div class="container">) para agrupar todos los elementos.
@@ -30,7 +16,7 @@ Un botón (<button id="calculate">) que dispara el cálculo.
 
 Un párrafo (<p id="result">) donde se muestra el resultado o los mensajes de error.
 
-##2. Estilo (CSS)
+## 2. Estilo (CSS)
 El código CSS se encarga de la presentación visual de la calculadora. Sus principales funciones son:
 
 Centrar la calculadora en la página y limitar su ancho (max-width: 400px).
@@ -41,7 +27,7 @@ Establecer un estilo uniforme (width: 90%, padding, border-radius) para las caja
 
 Dar un color de fondo (#4CAF50, verde) al botón de "Calculate" para hacerlo destacar.
 
-##3. Lógica (JavaScript)
+## 3. Lógica (JavaScript)
 El JavaScript es el "cerebro" de la aplicación, controlando cómo funciona la calculadora:
 
 Captura de Elementos: Primero, el script obtiene referencias a todos los elementos clave del HTML (los dos números, el operador, el botón y el párrafo del resultado) usando sus IDs.
@@ -60,7 +46,7 @@ Muestra el resultado final o un mensaje de error en el párrafo result.
 
 Manejador de Eventos: La línea calculateButton.addEventListener('click', calculate); asocia la función calculate al evento de clic del botón.
 
-##4. Presentación (Streamlit)
+## 4. Presentación (Streamlit)
 La parte final del script es de Python y usa Streamlit para servir el código web
 
 
