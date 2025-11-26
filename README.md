@@ -1,54 +1,79 @@
+# <h1 align="center">_SD_ANALYTICS_</h1>
+<p align="center">
+  <img src="images/SD_analytics.png"  height="400">
+<p align="center">
+
+## Índice
+
+1. [Descripción](#Descripción-Proyectos)
+2. [Regresión Lineal con Red Neuronal](#Regresión-Lineal-con-Red-Neuronal)
+3. [Predicción Multiclase](#Predicción-Multiclase)
+4. [Análisis de Tenis](#Análisis-de-Tenis)
+5. [Demo Modelos en Acción](#Demo-Modelos-en-Acción)
+6. [Stack de tecnologías y herramientas](#Stack-de-tecnologías-y-herramientas)
+7. [Colaboradores](#Colaboradores)
 
 ## Descripción Proyectos
 
-Esta es una aplicación web sencilla y funcional cuyo único propósito es realizar operaciones aritméticas básicas (suma, resta, multiplicación y división) utilizando JavaScript para la lógica, y luego ser presentada al usuario a través del framework Streamlit.
+🚀 Funcionamiento y Arquitectura
+La aplicación combina cuatro tecnologías clave, cada una cumpliendo un rol bien definido, siguiendo el modelo tradicional de desarrollo web:
 
-### 1. Estructura (HTML)
-El código HTML define el esqueleto de la calculadora, que incluye:
+1. Estructura (HTML) 🏗️
+El HTML proporciona el esqueleto y la disposición de la interfaz de la calculadora.
 
-Un contenedor principal (<div class="container">) para agrupar todos los elementos.
+Contenedor principal: Un div que agrupa y centra los elementos.
 
-Dos campos de entrada (<input type="number">) con los IDs firstNumber y secondNumber para que el usuario introduzca los operandos.
+Entradas de usuario: Dos campos de texto (<input type="number">) para los operandos (firstNumber y secondNumber).
 
-Un menú desplegable (<select id="operator">) que permite seleccionar la operación (**, -, *, /).
+Selector de Operación: Un menú desplegable (<select id="operator">) para elegir la operación aritmética (**, -, *, /).
 
-Un botón (<button id="calculate">) que dispara el cálculo.
+Interacción: Un botón (<button id="calculate">) que inicia el proceso de cálculo.
 
-Un párrafo (<p id="result">) donde se muestra el resultado o los mensajes de error.
+Salida: Un párrafo (<p id="result">) reservado para mostrar el resultado final o mensajes al usuario.
 
-### 2. Estilo (CSS)
-El código CSS se encarga de la presentación visual de la calculadora. Sus principales funciones son:
+2. Estilo (CSS) ✨
+El CSS se aplica directamente dentro del HTML para asegurar que la calculadora tenga una presentación visual limpia y responsive, independientemente del entorno de Streamlit.
 
-Centrar la calculadora en la página y limitar su ancho (max-width: 400px).
+Diseño: Centrado, bordes redondeados y una sombra sutil para simular una caja física.
 
-Aplicar un borde y una sombra a la caja principal para un mejor diseño.
+Consistencia: Aplica un estilo uniforme a las entradas, el selector y el botón.
 
-Establecer un estilo uniforme (width: 90%, padding, border-radius) para las cajas de entrada y el botón.
+Énfasis: Destaca el botón "Calculate" con un color de fondo verde (#4CAF50).
 
-Dar un color de fondo (#4CAF50, verde) al botón de "Calculate" para hacerlo destacar.
+3. Lógica (JavaScript) 🧠
+El JavaScript es el motor funcional que realiza los cálculos y maneja la interacción del usuario.
 
-### 3. Lógica (JavaScript)
-El JavaScript es el "cerebro" de la aplicación, controlando cómo funciona la calculadora:
+Captura de DOM: El script primero localiza los elementos HTML por su ID.
 
-Captura de Elementos: Primero, el script obtiene referencias a todos los elementos clave del HTML (los dos números, el operador, el botón y el párrafo del resultado) usando sus IDs.
+Función calculate(): Se ejecuta al hacer clic en el botón.
 
-Función calculate(): Esta función se ejecuta cuando se hace clic en el botón:
+Convierte los valores de entrada a números (parseFloat).
 
-Convierte los valores de texto de los campos de entrada a números flotantes (parseFloat).
+Valida las entradas para evitar errores (isNaN).
 
-Verifica si las entradas son números válidos (isNaN).
+Utiliza una sentencia switch para aplicar la operación correcta.
 
-Utiliza una sentencia switch para realizar la operación correspondiente según el operador seleccionado.
+Incluye manejo de excepciones para la división por cero.
 
-Maneja un caso especial de división por cero.
+Actualiza dinámicamente el contenido del elemento result.
 
-Muestra el resultado final o un mensaje de error en el párrafo result.
+Manejador de Eventos: El método addEventListener('click', calculate) es crucial, ya que enlaza el evento de clic del botón directamente a la ejecución de la función de cálculo.
 
-Manejador de Eventos: La línea calculateButton.addEventListener('click', calculate); asocia la función calculate al evento de clic del botón.
+4. Presentación (Streamlit / Python) 🐍
+Streamlit actúa como el host de la aplicación, permitiendo que un código web independiente se ejecute dentro de un marco de aplicación de Python.
 
-### 4. Presentación (Streamlit)
-La parte final del script es de Python y usa Streamlit para servir el código web
+Incrustación: El código HTML, CSS y JavaScript se guarda como una única cadena de texto en una variable de Python (html_code).
 
+Renderizado: La función clave es components.html(html_code, height=450). Esta función le indica a Streamlit que renderice el contenido de la cadena dentro de un iframe seguro, haciendo que la calculadora sea completamente interactiva y funcional dentro de la aplicación de Streamlit.
+
+## 🛠️ Stack de tecnologías y herramientas
+
+Tecnología,Rol en el Proyecto
+Streamlit,Framework principal de Python para alojar la aplicación web.
+HTML5,Estructura los elementos de la calculadora.
+CSS3,Define el aspecto visual y el diseño.
+JavaScript,Implementa la lógica de cálculo y la interactividad.
+Python,Contiene el script que utiliza Streamlit para incrustar el componente.
 
 ## Colaboradores
 
