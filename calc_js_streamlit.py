@@ -100,4 +100,4 @@ html_code = f"""
 """
 st.header('Demostración de JavaScript Incrustado en Streamlit')
 components.html(html_code, height=450)
-st.code(html_code, language='html')
+#st.code(html_code, language='html')
