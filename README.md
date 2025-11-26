@@ -15,61 +15,53 @@
 
 ## Descripción Proyectos
 
-## Regresión Lineal con Red Neuronal
+sta es una aplicación web sencilla y funcional cuyo único propósito es realizar operaciones aritméticas básicas (suma, resta, multiplicación y división) utilizando JavaScript para la lógica, y luego ser presentada al usuario a través del framework Streamlit.
 
-Preparación de datos: se establece una relación lineal utilizando un peso de 0,8 y un sesgo de 0,4 para crear un conjunto de datos sintéticos, que luego se divide en conjuntos de entrenamiento (80 %) y de prueba (20 %).
+##1. Estructura (HTML)
+El código HTML define el esqueleto de la calculadora, que incluye:
 
-Visualización: se define una función plot_predictions para visualizar los datos de entrenamiento, los datos de prueba y cualquier predicción realizada por el modelo, inicialmente trazando los datos de entrenamiento y prueba sin predicciones.
+Un contenedor principal (<div class="container">) para agrupar todos los elementos.
 
-Definición del modelo: se define un modelo de red neuronal (model_1) utilizando nn.Sequential de PyTorch, que consta de dos capas completamente conectadas con 10 neuronas cada una y una capa de salida con 1 neurona.
+Dos campos de entrada (<input type="number">) con los IDs firstNumber y secondNumber para que el usuario introduzca los operandos.
 
-Bucle de entrenamiento: el modelo se entrena durante 1000 épocas utilizando la pérdida L1 y el optimizador Adam, imprimiendo la pérdida de entrenamiento y prueba cada 100 épocas para monitorear el progreso del entrenamiento.
+Un menú desplegable (<select id="operator">) que permite seleccionar la operación (**, -, *, /).
 
-Evaluación y visualización: después del entrenamiento, el modelo se evalúa en modo de inferencia para predecir los datos de prueba y los resultados se visualizan utilizando la función plot_predictions, lo que permite la comparación entre las etiquetas de prueba reales y los valores predichos.
+Un botón (<button id="calculate">) que dispara el cálculo.
 
-## Predicción Multiclase
+Un párrafo (<p id="result">) donde se muestra el resultado o los mensajes de error.
 
-Objetivo: Clasificar los puntos de datos en una de cuatro clases distintas mediante una red neuronal en PyTorch.
+##2. Estilo (CSS)
+El código CSS se encarga de la presentación visual de la calculadora. Sus principales funciones son:
 
-Generación de datos: Conjunto de datos sintéticos creado mediante make_blobs, con 4 clústeres que representan diferentes clases en un espacio de características 2D.
-Arquitectura del modelo: Una red neuronal de propagación hacia adelante (BlobModel) con una capa de entrada de 2 características, dos capas ocultas con activación ReLU y una capa de salida para 4 clases.
+Centrar la calculadora en la página y limitar su ancho (max-width: 400px).
 
-Proceso de entrenamiento: Utiliza pérdida de entropía cruzada para la clasificación de múltiples clases, el optimizador Adam para actualizaciones de parámetros y entrena durante 100 épocas.
+Aplicar un borde y una sombra a la caja principal para un mejor diseño.
 
-Resultados: Logra una alta precisión en este caso ideal (hasta el 100 % en datos de prueba) y visualiza los límites de decisión, lo que demuestra una distinción de clases efectiva en el conjunto de datos.
+Establecer un estilo uniforme (width: 90%, padding, border-radius) para las cajas de entrada y el botón.
 
-## Análisis de Tenis
+Dar un color de fondo (#4CAF50, verde) al botón de "Calculate" para hacerlo destacar.
 
+##3. Lógica (JavaScript)
+El JavaScript es el "cerebro" de la aplicación, controlando cómo funciona la calculadora:
 
-Procesamiento de video: el script lee un archivo de video de un partido deportivo, detectando los movimientos del jugador y la pelota usando dos modelos CNN separados: un rastreador de jugadores que usa un modelo YOLOv8 y un rastreador de pelotas con un modelo entrenado diferente.
+Captura de Elementos: Primero, el script obtiene referencias a todos los elementos clave del HTML (los dos números, el operador, el botón y el párrafo del resultado) usando sus IDs.
 
-Detección de tiros de pelota: identifica cuadros específicos donde se lanza la pelota, calcula las distancias recorridas por la pelota entre cuadros y convierte estas distancias de píxeles en medidas del mundo real en metros.
+Función calculate(): Esta función se ejecuta cuando se hace clic en el botón:
 
-Estadísticas de jugadores: el programa recopila y actualiza las estadísticas de dos jugadores, incluyendo la cantidad de tiros realizados, la velocidad total y del último tiro, y la velocidad del jugador contrario cuando se lanza la pelota.
+Convierte los valores de texto de los campos de entrada a números flotantes (parseFloat).
 
-Visualización de datos: visualiza los jugadores detectados, las trayectorias de la pelota, las líneas de la cancha y las estadísticas de los jugadores en los cuadros de video, creando un video de salida anotado que muestra la dinámica del juego.
+Verifica si las entradas son números válidos (isNaN).
 
-Generación de salida: finalmente, el script guarda el video procesado, incorporando todas las visualizaciones y los números de cuadro para un mejor análisis y comprensión del desempeño de los jugadores durante el partido.
+Utiliza una sentencia switch para realizar la operación correspondiente según el operador seleccionado.
 
+Maneja un caso especial de división por cero.
 
-## Stack de tecnologías y herramientas
+Muestra el resultado final o un mensaje de error en el párrafo result.
 
-|  Librería/herramienta    |   Logo                                    | Descripción                                                                                                           |
-|----------------------|-----------------------------------------|----------------------------------------------|
+Manejador de Eventos: La línea calculateButton.addEventListener('click', calculate); asocia la función calculate al evento de clic del botón.
 
-| **Visual Studio Code**|<img src="https://static-00.iconduck.com/assets.00/visual-studio-code-icon-512x506-2fdb6ar6.png" width="70">| Editor de código fuente.|
-
-| **Python**|<img src="https://seeklogo.com/images/P/python-logo-A32636CAA3-seeklogo.com.png" width="50">| Lenguaje de programación utilizado para análisis de datos y desarrollo de aplicaciones.|
-
-| **GitHub**|<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" width="100">| Plataforma de desarrollo colaborativo para proyectos de software.|
-
-| **HTML5**|<img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" width="100"> | HTML.|
-
-| **CSS3**|<img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" width="100"> | CSS3.|
-
-| **JAVASCRIPT**|<img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="100"> | JAVASCRIPT.|
-
-| **Streamlit** | <img src="https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png" width="100"> | Streamlit es una herramienta de código abierto diseñada para crear aplicaciones web interactivas y visualizaciones de datos de manera rápida y sencilla utilizando Python.|
+##4. Presentación (Streamlit)
+La parte final del script es de Python y usa Streamlit para servir el código web
 
 
 ## Colaboradores
