@@ -1,9 +1,5 @@
 # 🚀 SD_ANALYTICS
 
-<p align="center">
-  <img src="images/SD_analytics.png" height="400">
-</p>
-
 ---
 
 ## 🏗️ Descripción del Proyecto: Calculadora Streamlit/Web
